@@ -22,7 +22,8 @@ filetype plugin indent on    " required
 " :PluginList       - lists configured plugins
 " :PluginInstall    - installs plugins; append `!` to update or just :PluginUpdate
 " :PluginSearch foo - searches for foo; append `!` to refresh local cache
-" :PluginClean      - confirms removal of unused plugins; append `!` to auto-approve removal
+" :PluginClean      - confirms removal of unused plugins; append `!` to
+" auto-approve removal l
 "
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
@@ -36,3 +37,7 @@ colorscheme desert      " colorscheme desert
 set nobackup            " get rid of anoying ~file
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
 set mouse=a
+
+highlight ColorColumn ctermbg=232
+let &colorcolumn=join(range(81,999),",")
+
