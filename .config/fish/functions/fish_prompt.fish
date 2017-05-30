@@ -8,9 +8,9 @@ function fish_prompt --description 'Write out the prompt'
         case default
             set_color red
         case insert
-            set_color green
+            set_color normal
         case replace_one
-            set_color green
+            set_color normal
         case visual
             set_color magenta
     end
