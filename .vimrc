@@ -35,7 +35,9 @@ set autoindent          " auto indenting
 set number              " line numbers
 colorscheme desert      " colorscheme desert
 set nobackup            " get rid of anoying ~file
-set tabstop=4 softtabstop=4 shiftwidth=4 expandtab
+set ts=4 sts=4 sw=4 et
+autocmd FileType html setlocal ts=4 sts=2 sw=2 et
+autocmd FileType javascript setlocal ts=4 sts=2 sw=2 et
 set mouse=a
 
 highlight ColorColumn ctermbg=232
