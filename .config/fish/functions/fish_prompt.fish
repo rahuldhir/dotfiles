@@ -1,9 +1,17 @@
-function fish_prompt --description 'Write out the prompt'
-	if test -z $WINDOW
-        printf '%s%s@%s%s%s%s%s' (set_color yellow) (whoami) (set_color purple) (prompt_hostname) (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
-    else
-        printf '%s%s@%s%s%s(%s)%s%s%s' (set_color yellow) (whoami) (set_color purple) (prompt_hostname) (set_color white) (echo $WINDOW) (set_color $fish_color_cwd) (prompt_pwd) (set_color normal)
+function fish_git
+    if test -e .git
+        set -l git_branch (git branch 2> /dev/null | grep -e '\*' | awk '{print $2}')
+        set -l git_status (git status -s)
+
+        if test -n "$git_status"
+            echo (set_color purple) $git_branch(set_color normal)
+        else
+            echo (set_color green) $git_branch(set_color normal)
+        end
     end
+end
+
+function fish_bind_mode_indicator
     switch $fish_bind_mode
         case default
             set_color red
@@ -14,5 +22,9 @@ function fish_prompt --description 'Write out the prompt'
         case visual
             set_color magenta
     end
-    echo '> '
+    echo ' >'
+end
+
+function fish_prompt
+    printf '%s%s%s%s%s%s ' (set_color yellow) (prompt_pwd) (set_color $fish_color_cwd) (fish_git) (set_color normal) (fish_bind_mode_indicator)
 end
