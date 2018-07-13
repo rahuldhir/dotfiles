@@ -9,7 +9,7 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-
+Plugin 'morhetz/gruvbox'
 Plugin 'ntpeters/vim-better-whitespace'
 
 " All of your Plugins must be added before the following line
@@ -43,3 +43,5 @@ set mouse=a
 highlight ColorColumn ctermbg=232
 let &colorcolumn=join(range(81,999),",")
 
+syntax on
+colorscheme gruvbox
