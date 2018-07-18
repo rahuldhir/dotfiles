@@ -1,9 +1,10 @@
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias vi='mvim -v'
-alias vim='mvim -v'
-alias view='mvim -vM'
+alias vi='nvim'
+alias vim='nvim'
+alias view='nvim -M'
+alias tree='tree -C'
 
-function hybrid_bindings --description "Vi-style bindings that inherit emacs-style bindings in all modes"
+function hybrid_bindings
     for mode in default insert visual
         fish_default_key_bindings -M $mode
     end
