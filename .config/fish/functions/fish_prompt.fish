@@ -1,6 +1,6 @@
 function fish_git
     if test -e .git
-        set -l git_branch (git branch 2> /dev/null | grep -e '\*' | awk '{print $2}')
+        set -l git_branch (git branch 2> /dev/null | grep -e '\*' | cut -d' ' -f2-)
         set -l git_status (git status -s)
 
         if test -n "$git_status"
