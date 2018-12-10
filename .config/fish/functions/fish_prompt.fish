@@ -1,5 +1,5 @@
 function fish_git
-    if test -e .git
+    if git rev-parse --is-inside-work-tree > /dev/null 2>&1
         set -l git_branch (git branch 2> /dev/null | grep -e '\*' | cut -d' ' -f2-)
         set -l git_status (git status -s)
 
