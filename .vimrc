@@ -134,7 +134,8 @@ set ffs=unix,dos,mac
 
 " Color screen after 80 columns in a different color
 highlight ColorColumn ctermbg=236
-let &colorcolumn=join(range(81,999),",")
+let &colorcolumn="".join(range(81,121),",").join(range(121,999),",")
+" let &colorcolumn=join(range(81,120),",")
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
