@@ -17,7 +17,7 @@
                     {
                         "manipulators": [
                             {
-                                "description": "Change caps_lock to escape when pressed and right_command when held.",
+                                "description": "Change caps_lock to escape when pressed and right_option when held.",
                                 "from": {
                                     "key_code": "caps_lock"
                                 },
@@ -31,7 +31,7 @@
                                 ],
                                 "to_if_held_down": [
                                     {
-                                        "key_code": "right_command"
+                                        "key_code": "right_option"
                                     }
                                 ],
                                 "type": "basic"
@@ -39,14 +39,14 @@
                         ]
                     },
                     {
-                        "description": "Change right_command + hjkl to arrow keys",
+                        "description": "Change right_option + hjkl to arrow keys",
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "h",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "any"
@@ -65,7 +65,7 @@
                                     "key_code": "j",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "any"
@@ -84,7 +84,7 @@
                                     "key_code": "k",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "any"
@@ -103,7 +103,7 @@
                                     "key_code": "l",
                                     "modifiers": {
                                         "mandatory": [
-                                            "right_command"
+                                            "right_option"
                                         ],
                                         "optional": [
                                             "any"
@@ -133,8 +133,7 @@
                     },
                     "ignore": false,
                     "manipulate_caps_lock_led": true,
-                    "simple_modifications": [
-                    ]
+                    "simple_modifications": []
                 }
             ],
             "fn_function_keys": [
