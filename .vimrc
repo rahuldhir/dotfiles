@@ -24,6 +24,9 @@ let mapleader = ","
 " Fast saving
 nmap <leader>w :w!<cr>
 
+" Reduce key code delays
+set timeoutlen=1000 ttimeoutlen=0
+
 " :W sudo saves the file
 " (useful for handling the permission-denied error)
 command W w !sudo tee % > /dev/null
