@@ -4,7 +4,9 @@ alias vim='nvim'
 alias view='nvim -M'
 alias tree='tree -C -I "node_modules|vendor|.git|bin|lib"'
 
-set -x -U GOPATH $HOME/code/go
+set -Ux EDITOR nvim
+
+set -Ux GOPATH $HOME/code/go
 set PATH $PATH $GOPATH/bin
 
 function hybrid_bindings
