@@ -14,3 +14,4 @@ function hybrid_bindings
     fish_vi_key_bindings --no-erase
 end
 set -g fish_key_bindings hybrid_bindings
+set -g fish_escape_delay_ms 10
