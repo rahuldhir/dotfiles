@@ -2,7 +2,7 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vi='nvim'
 alias vim='nvim'
 alias view='nvim -M'
-alias tree='tree -C -I "node_modules|vendor|.git|bin|lib"'
+alias tree='tree -C -I (cat ~/.gitignore_global (test -e .gitignore && echo .gitignore) | egrep -v "^#.*\$|^[[:space:]]*\$" | tr "\\n" "|" | sed "s/^/\'/;s/\$/\'/")'
 
 set -Ux EDITOR nvim
 
