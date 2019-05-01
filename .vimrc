@@ -11,7 +11,7 @@ filetype indent on
 " Configure default indentation based on filetype
 autocmd FileType HTML setlocal shiftwidth=2 tabstop=2
 autocmd FileType javascript setlocal shiftwidth=2 tabstop=2
-autocmd FileType python setlocal shiftwidth=2 tabstop=2
+autocmd FileType python setlocal shiftwidth=4 tabstop=4
 autocmd FileType yaml setlocal shiftwidth=2 tabstop=2
 
 " Set to auto read when a file is changed from the outside
