@@ -18,7 +18,6 @@ end
 set -Ux EDITOR nvim
 
 set -Ux GOPATH $HOME/code/go
-set PATH $PATH
 
 function hybrid_bindings
     for mode in default insert visual
