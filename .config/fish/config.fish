@@ -2,12 +2,23 @@ alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias vi='nvim'
 alias vim='nvim'
 alias view='nvim -M'
-alias tree='tree -C -I (cat ~/.gitignore_global (test -e .gitignore && echo .gitignore) | egrep -v "^#.*\$|^[[:space:]]*\$" | tr "\\n" "|" | sed "s/^/\'/;s/\$/\'/")'
+alias python='python3'
+alias pip='pip3'
+
+function tree
+    if count $argv  > /dev/null
+        set search_path $argv[1]
+    else
+        set search_path .
+    end
+    set ignore_paths echo -e (cat ~/.gitignore_global | grep -v '^#') && git check-ignore */* | tr " " "|"
+    /usr/local/bin/tree -C -I '$ignore_paths' $search_path
+end
 
 set -Ux EDITOR nvim
 
 set -Ux GOPATH $HOME/code/go
-set PATH $PATH $GOPATH/bin
+set PATH $PATH
 
 function hybrid_bindings
     for mode in default insert visual
