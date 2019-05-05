@@ -1,5 +1,6 @@
 const MOD = ['ctrl', 'alt'];
 const DEFAULT_WINDOW_RATIO = 0.85;
+const SMALL_WINDOW_RATIO = 0.65;
 
 function initialize(keys) {
   for (let i = 0; i < keys.length; i++) {
@@ -14,61 +15,73 @@ function reloadKeys(keys) {
   }
 }
 
-function getMainScreenSize() {
-  return Screen.main().flippedVisibleFrame();
-}
+const fullWidth = (screen) => screen.width;
+const fullHeight = (screen) => screen.height;
 
-function getFullWidth() {
-  return getMainScreenSize().width;
-}
+const halfWidth = (screen) => Math.ceil(fullWidth(screen) / 2);
+const halfHeight = (screen) => Math.ceil(fullHeight(screen) / 2);
 
-function getFullHeight() {
-  return getMainScreenSize().height;
-}
+const defaultWidth = (screen) => Math.ceil(fullWidth(screen) * DEFAULT_WINDOW_RATIO);
+const defaultHeight = (screen) => Math.ceil(fullHeight(screen) * DEFAULT_WINDOW_RATIO);
 
-function getHalfWidth() {
-  return getFullWidth() / 2;
-}
+const smallWidth = (screen) => Math.ceil(fullWidth(screen) * SMALL_WINDOW_RATIO);
+const smallHeight = (screen) => Math.ceil(fullHeight(screen) * SMALL_WINDOW_RATIO);
 
-function getHalfHeight() {
-  return getFullHeight() / 2;
-}
-
-function getDefaultWidth() {
-  return getFullWidth() * DEFAULT_WINDOW_RATIO;
-}
-
-function getDefaultHeight() {
-  return getFullHeight() * DEFAULT_WINDOW_RATIO;
-}
-
-var keyBindings = [
+const keyBindings = [
   new Key('h', MOD, () => {
+
+      let s = Screen.main().flippedVisibleFrame();
       Window.focused().setFrame({
           y: 0,
           x: 0,
-          width: getHalfWidth(),
-          height: getFullHeight(),
+          width: halfWidth(s),
+          height: fullHeight(s),
       });
+
   }),
   new Key('j', MOD, () => {
-      Window.focused().setFrame({
-          y: (getFullHeight() - getDefaultHeight()) / 2,
-          x: (getFullWidth() - getDefaultWidth()) / 2,
-          width: getDefaultWidth(),
-          height: getDefaultHeight(),
-      });
+
+      let s = Screen.main().flippedVisibleFrame();
+      let defaultWindowSize = {
+          y: Math.ceil((fullHeight(s) - defaultHeight(s)) / 2),
+          x: Math.ceil((fullWidth(s) - defaultWidth(s)) / 2),
+          width: defaultWidth(s),
+          height: defaultHeight(s),
+      };
+
+      let smallWindowSize = {
+          y: Math.ceil((fullHeight(s) - smallHeight(s)) / 2),
+          x: Math.ceil((fullWidth(s) - smallWidth(s)) / 2),
+          width: smallWidth(s),
+          height: smallHeight(s),
+      };
+
+      let windowSize = defaultWindowSize;
+      let currentWindowSize = Window.focused().frame();
+
+      let isDefault = JSON.stringify(currentWindowSize) == JSON.stringify(defaultWindowSize);
+      let isSmall = JSON.stringify(currentWindowSize) == JSON.stringify(smallWindowSize);
+
+      console.log(JSON.stringify(currentWindowSize), JSON.stringify(smallWindowSize));
+      if (isDefault || isSmall) {
+        windowSize = smallWindowSize;
+      }
+
+      Window.focused().setFrame(windowSize);
   }),
   new Key('k', MOD, () => {
     Window.focused().maximize();
   }),
   new Key('l', MOD, () => {
+
+      let s = Screen.main().flippedVisibleFrame();
       Window.focused().setFrame({
           y: 0,
-          x: getHalfWidth(),
-          width: getHalfWidth(),
-          height: getFullHeight(),
+          x: halfWidth(s),
+          width: halfWidth(s),
+          height: fullHeight(s),
       });
+
   }),
 ];
 
