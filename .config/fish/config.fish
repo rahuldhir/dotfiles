@@ -7,7 +7,7 @@ alias pip='pip3'
 
 function tree
     if count $argv  > /dev/null
-        set search_path $argv[1]
+        set search_path $argv
     else
         set search_path .
     end
