@@ -18,7 +18,9 @@ end
 set -Ux EDITOR nvim
 
 set -Ux GOPATH $HOME/code/go
-status --is-interactive; and . (rbenv init -|psub)
+if type -q rbenv
+  status --is-interactive; and . (rbenv init -|psub)
+end
 
 set -x PATH $PATH $GOPATH/bin/
 
