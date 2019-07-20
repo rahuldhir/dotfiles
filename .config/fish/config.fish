@@ -18,6 +18,9 @@ end
 set -Ux EDITOR nvim
 
 set -Ux GOPATH $HOME/code/go
+status --is-interactive; and . (rbenv init -|psub)
+
+set -x PATH $PATH $GOPATH/bin/
 
 function hybrid_bindings
     for mode in default insert visual

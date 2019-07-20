@@ -51,3 +51,7 @@ tags
 
 .env
 venv/
+
+# IDE #
+#######
+.idea/
