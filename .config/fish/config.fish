@@ -32,3 +32,5 @@ function hybrid_bindings
 end
 set -g fish_key_bindings hybrid_bindings
 set -g fish_escape_delay_ms 10
+
+source ~/.config/fish/local/wpengine.fish

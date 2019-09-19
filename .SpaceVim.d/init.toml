@@ -24,6 +24,7 @@
     enable_tabline_filetype_icon = true
     enable_statusline_mode = true
     filetree_direction = "left"
+    bootstrap_after = "autoload#after"
 
 # Enable autocomplete layer
 [[layers]]
@@ -41,3 +42,21 @@ name = 'lang#javascript'
 
 [[layers]]
 name = 'lang#go'
+
+[[layers]]
+name = 'lang#sql'
+
+[[layers]]
+name = 'lang#php'
+
+[[layers]]
+name = 'git'
+
+[[layers]]
+name = 'lang#ruby'
+
+[[layers]]
+name = "unite"
+
+[[custom_plugins]]
+name = "slim-template/vim-slim"
