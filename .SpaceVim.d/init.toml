@@ -60,3 +60,4 @@ name = "unite"
 
 [[custom_plugins]]
 name = "slim-template/vim-slim"
+name = "vim-scripts/dbext.vim"
