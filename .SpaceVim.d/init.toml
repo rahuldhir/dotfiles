@@ -24,7 +24,8 @@
     enable_tabline_filetype_icon = true
     enable_statusline_mode = true
     filetree_direction = "left"
-    bootstrap_after = "autoload#after"
+    bootstrap_before = "custom#before"
+    autocomplete_parens = false
 
 # Enable autocomplete layer
 [[layers]]
@@ -53,6 +54,12 @@ name = 'lang#php'
 name = 'git'
 
 [[layers]]
+name = 'lang#markdown'
+
+[[layers]]
+name = 'lang#dockerfile'
+
+[[layers]]
 name = 'lang#ruby'
 
 [[layers]]
@@ -61,3 +68,4 @@ name = "unite"
 [[custom_plugins]]
 name = "slim-template/vim-slim"
 name = "vim-scripts/dbext.vim"
+name = "sebdah/vim-delve"
