@@ -1,6 +1,5 @@
 # Aliases
 alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias em='emacs -nw'
 alias vi='nvim'
 alias vim='nvim'
 alias view='nvim -M'
