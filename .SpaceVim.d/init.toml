@@ -24,8 +24,9 @@
     enable_tabline_filetype_icon = true
     enable_statusline_mode = true
     filetree_direction = "left"
-    bootstrap_before = "custom#before"
     autocomplete_parens = false
+
+    bootstrap_before = 'bootstrap#before'
 
 # Enable autocomplete layer
 [[layers]]
@@ -69,3 +70,6 @@ name = "unite"
 name = "slim-template/vim-slim"
 name = "vim-scripts/dbext.vim"
 name = "sebdah/vim-delve"
+
+[[layers]]
+name = "lang#vue"
