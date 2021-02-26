@@ -4,9 +4,9 @@ function fish_git
         set -l git_status (git status -s)
 
         if test -n "$git_status"
-            echo (set_color purple) $git_branch(set_color normal)
+            echo (set_color purple)$git_branch(set_color normal)
         else
-            echo (set_color green) $git_branch(set_color normal)
+            echo (set_color green)$git_branch(set_color normal)
         end
     end
 end
@@ -22,9 +22,11 @@ function fish_bind_mode_indicator
         case visual
             set_color magenta
     end
-    echo ' >'
+    echo '>'
 end
 
 function fish_prompt
-    printf '%s%s%s%s%s%s ' (set_color yellow) (prompt_pwd) (set_color $fish_color_cwd) (fish_git) (set_color normal) (fish_bind_mode_indicator)
+    set cluster (echo (string split _ (kubectl config current-context))[-1])
+    set ns (kubectl config view --minify -o 'jsonpath={..namespace}' 2>/dev/null)
+    printf '%s:%s\n%s %s %s ' (set_color blue)(echo $cluster) (set_color grey)(echo $ns) (set_color yellow)(prompt_pwd) (set_color $fish_color_cwd)(fish_git) (set_color normal)(fish_bind_mode_indicator)
 end

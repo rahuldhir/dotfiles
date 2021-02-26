@@ -10,7 +10,7 @@ alias pip='pip3'
 # Shell Variables
 set -Ux EDITOR nvim
 set -Ux GOPATH $HOME/go
-set -x PATH /usr/local/bin $GOPATH/bin $PATH
+set -x PATH /usr/local/bin $GOPATH/bin /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin $PATH
 set -g fish_key_bindings hybrid_bindings
 set -g fish_escape_delay_ms 10
 set -x BUILD_ENV_PREFER_LOCAL true
