@@ -1,0 +1,6 @@
+require 'plugins'
+require 'autocmds'
+require 'colorscheme'
+require 'options'
+require 'keybindings'
+require 'commands'

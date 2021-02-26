@@ -73,3 +73,6 @@ name = "sebdah/vim-delve"
 
 [[layers]]
 name = "lang#vue"
+
+[[layers]]
+name = "lang#graphql"

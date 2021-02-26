@@ -54,3 +54,4 @@ venv/
 # IDE #
 #######
 .idea/
+__debug_bin
