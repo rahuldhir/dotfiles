@@ -8,8 +8,8 @@ utils.tnoremap('<ESC>', [[<C-\><C-n>]])
 utils.tnoremap('<C-[>', [[<C-\><C-n>]])
 
 -- Copy/Paste from the system clipboard
-utils.vnoremap('<C-i>', [["+y<CR>]])
-utils.nnoremap('<C-o>', [["+p<CR>]])
+utils.vnoremap('<leader>y', [["+y<CR>]])
+utils.nnoremap('<leader>p', [["+p<CR>]])
 
 -- File explorer
 utils.nnoremap('<leader>ft', ':NvimTreeToggle<CR>')
@@ -17,6 +17,9 @@ utils.nnoremap('<Tab>', '<C-W>W')
 
 -- Terminal
 utils.nnoremap('<leader>\'', ':terminal<CR>A')
+
+-- Which Key
+utils.nnoremap('<leader>', ':WhichKeyVisual "<Space>"<CR>')
 
 -- Omnifunc
 utils.inoremap('<C-Space>', '<C-x><C-o>')
@@ -52,7 +55,7 @@ utils.vnoremap('<M-k>', [[:m'<-2<CR>`>my`<mzgv`yo`z]])
 utils.nnoremap('<leader>r', ':e!<CR>')
 
 -- Reload config
-utils.nnoremap('<leader>vs', '<cmd>ConfigReload<CR><cmd>noh<CR><cmd>EditorConfigReload<CR>')
+utils.nnoremap('<leader>vs', '<cmd>ConfigReload<CR>')
 
 -- Telesccpe
 utils.nnoremap('<leader>ff', [[<cmd>lua require'plugins.config.telescope'.find_files()<CR>]])

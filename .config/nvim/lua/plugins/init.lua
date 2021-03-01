@@ -10,9 +10,10 @@ packer.startup(function()
   use { 'wbthomason/packer.nvim', opt = true }
 
   -- Theme
-  use 'morhetz/gruvbox'
+  use 'christianchiarulli/nvcode-color-schemes.vim'
 
   -- Editor
+  use 'liuchengxu/vim-which-key'
   use 'SirVer/ultisnips'
   use 'Shougo/context_filetype.vim'
 

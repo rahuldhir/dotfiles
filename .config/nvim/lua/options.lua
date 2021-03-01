@@ -26,7 +26,7 @@ vim.o.showmatch = true
 vim.o.textwidth = 120
 vim.o.scrolloff = 5
 vim.wo.linebreak = true
-vim.wo.colorcolumn = '120'
+-- vim.wo.colorcolumn = '120'
 
 -- No backups or swapfiles needed
 vim.o.dir = os.getenv('HOME') .. '/.cache/nvim'
@@ -75,4 +75,4 @@ vim.o.autoread = true
 
 -- Invisible chars list
 vim.wo.list = true
-vim.o.listchars = [[tab:▸ ,trail:·,space:·]]
+vim.o.listchars = [[tab:| ,trail:·]]

@@ -18,7 +18,7 @@ vim.cmd 'au WinEnter * lua require"statusline".setlocal_active_statusline()'
 vim.cmd 'au WinLeave * lua require"statusline".setlocal_inactive_statusline()'
 vim.cmd 'augroup end'
 
- -- Enable invisiable chars
+ -- Enable invisible chars
 vim.cmd 'augroup disable_char_list'
 vim.cmd 'au!'
 vim.cmd 'au FileType help setlocal nolist'

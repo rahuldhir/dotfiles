@@ -1,8 +1,11 @@
+bat
 ctags
+fd
 fish
 fzf
 git
 jq
+lsd
 neovim
 ripgrep
 tmux

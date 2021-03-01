@@ -28,4 +28,8 @@ function M.live_grep()
   telescope_builtin.live_grep {}
 end
 
+function M.buffers()
+  telescope_builtin.buffers {}
+end
+
 return M

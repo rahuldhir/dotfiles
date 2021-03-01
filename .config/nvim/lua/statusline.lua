@@ -22,6 +22,7 @@ local function cursor_mode()
     ['R']  = 'R',
     ['Rv'] = 'R',
     ['c']  = 'C',
+    ['t']  = 'T',
   }
 
   local mode_colors = {
@@ -30,6 +31,7 @@ local function cursor_mode()
     ['I']  = { fg = '#FCE8C3', bg = '#EF2F27' },
     ['R'] = { fg = '#FCE8C3', bg = '#EF2F27' },
     ['C'] = { fg = '#FCE8C3', bg = '#2C78BF' },
+    ['T'] = { fg = '#FCE8C3', bg = '#2C78BF' },
   }
 
   local m = vim.api.nvim_get_mode()

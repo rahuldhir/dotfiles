@@ -48,7 +48,7 @@ function M.set_highlights()
   local tb_sel_bg = vim.fn.synIDattr(vim.fn.hlID('TabLineSel'), 'bg#')
   local tb_sel_fg = vim.fn.synIDattr(vim.fn.hlID('TabLineSel'), 'fg#')
 
-  vim.cmd(string.format('hi TabLineSelLeftSep guifg=%s guibg=%s', tb_fill_bg, tb_sel_bg))
+  vim.cmd(string.format('hi TabLineSelLeftSep guifg=%s', tb_fill_bg))
   vim.cmd(string.format('hi TabLineSelRightSep guifg=%s guibg=%s', tb_sel_bg, tb_fill_bg))
 end
 
