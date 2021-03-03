@@ -26,7 +26,10 @@ function fish_bind_mode_indicator
 end
 
 function fish_prompt
-    set cluster (echo (string split _ (kubectl config current-context))[-1])
-    set ns (kubectl config view --minify -o 'jsonpath={..namespace}' 2>/dev/null)
-    printf '%s:%s\n%s %s %s ' (set_color blue)(echo $cluster) (set_color grey)(echo $ns) (set_color yellow)(prompt_pwd) (set_color $fish_color_cwd)(fish_git) (set_color normal)(fish_bind_mode_indicator)
+    if kubectl config current-context > /dev/null 2>&1
+        set cluster (echo (string split _ (kubectl config current-context))[-1])
+        set ns (kubectl config view --minify -o 'jsonpath={..namespace}' 2>/dev/null)
+        printf '%s:%s\n' (set_color blue)(echo $cluster) (set_color grey)(echo $ns)
+    end
+    printf '%s %s %s ' (set_color yellow)(prompt_pwd) (set_color $fish_color_cwd)(fish_git) (set_color normal)(fish_bind_mode_indicator)
 end
