@@ -76,3 +76,7 @@ vim.o.autoread = true
 -- Invisible chars list
 vim.wo.list = true
 vim.o.listchars = [[tab:| ,trail:·]]
+
+-- More natural splits
+vim.o.splitbelow = true
+vim.o.splitright = true

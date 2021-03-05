@@ -10,19 +10,18 @@ packer.startup(function()
   use { 'wbthomason/packer.nvim', opt = true }
 
   -- Theme
-  use 'christianchiarulli/nvcode-color-schemes.vim'
-
-  -- Editor
-  use 'liuchengxu/vim-which-key'
-  use 'SirVer/ultisnips'
-  use 'Shougo/context_filetype.vim'
-
-  -- Go
-  use 'fatih/vim-go'
+  use {'npxbr/gruvbox.nvim', requires = {
+    { 'rktjmp/lush.nvim' },
+  }}
 
   -- File Explorer
-  use 'kyazdani42/nvim-web-devicons'
-  use 'kyazdani42/nvim-tree.lua'
+  use { 'nvim-telescope/telescope.nvim', requires = {
+    { 'nvim-lua/popup.nvim' },
+    { 'nvim-lua/plenary.nvim' }
+  }}
+  use { 'kyazdani42/nvim-tree.lua', requires = {
+    { 'kyazdani42/nvim-web-devicons' }
+  }}
   use { 'lewis6991/gitsigns.nvim', requires = {
     { 'nvim-lua/plenary.nvim' }
   }}
@@ -31,18 +30,21 @@ packer.startup(function()
   use 'neovim/nvim-lspconfig'
   use 'nvim-lua/completion-nvim'
   use 'nvim-lua/lsp-status.nvim'
-  use { 'nvim-telescope/telescope.nvim', requires = {
-    { 'nvim-lua/popup.nvim' },
-    { 'nvim-lua/plenary.nvim' }
-  }}
 
   -- Tree Sitter
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+  use { 'nvim-treesitter/completion-treesitter' }
+
+  -- Other?
+  use 'liuchengxu/vim-which-key'
+  use 'SirVer/ultisnips'
+  use 'Shougo/context_filetype.vim'
 end)
 
 -- Plugin Configs
 local current_path = (...):gsub('%.init$', '')
-require(current_path .. '.config.nvim-tree')
-require(current_path .. '.config.treesitter')
-require(current_path .. '.config.telescope')
 require(current_path .. '.config.gitsigns')
+require(current_path .. '.config.nvim-lspconfig')
+require(current_path .. '.config.nvim-tree')
+require(current_path .. '.config.telescope')
+require(current_path .. '.config.treesitter')

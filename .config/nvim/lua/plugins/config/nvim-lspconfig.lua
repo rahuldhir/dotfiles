@@ -1,0 +1,10 @@
+require 'lspconfig'.bashls.setup{}
+require 'lspconfig'.gopls.setup{}
+require 'lspconfig'.graphql.setup{}
+require 'lspconfig'.jsonls.setup{}
+require 'lspconfig'.pyls.setup{}
+require 'lspconfig'.sumneko_lua.setup{}
+require 'lspconfig'.terraformls.setup{}
+require 'lspconfig'.tsserver.setup{}
+require 'lspconfig'.vuels.setup{}
+require 'lspconfig'.yamlls.setup{}

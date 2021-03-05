@@ -32,9 +32,9 @@ utils.nnoremap('<leader>sc', ':noh<CR>')
 -- List all buffers
 utils.nnoremap('<leader>ba', ':buffers<CR>')
 utils.nnoremap('<leader>bn', ':enew<CR>')
+utils.nnoremap('<leader>bd', ':bp<BAR>sp<BAR>bn<BAR>bd<CR>')
 utils.nnoremap('<C-l>',      ':bnext<CR>')
 utils.nnoremap('<C-h>',      ':bprevious<CR>')
-utils.nnoremap('<leader>bd', ':bp<BAR>sp<BAR>bn<BAR>bd<CR>')
 
 -- Resize window panes, we can use those arrow keys
 -- to help use resize windows - at least we give them some purpose
@@ -57,8 +57,8 @@ utils.nnoremap('<leader>r', ':e!<CR>')
 -- Reload config
 utils.nnoremap('<leader>vs', '<cmd>ConfigReload<CR>')
 
--- Telesccpe
-utils.nnoremap('<leader>ff', [[<cmd>lua require'plugins.config.telescope'.find_files()<CR>]])
+-- Telescope
+utils.nnoremap('<leader>ff', [[<cmd>lua require'telescope.builtin'.fd()<CR>]])
 utils.nnoremap('<leader>fg', [[<cmd>lua require'plugins.config.telescope'.live_grep()<CR>]])
 utils.nnoremap('<leader>fb', [[<cmd>lua require'plugins.config.telescope'.buffers()<CR>]])
 utils.nnoremap('<leader>fh', [[<cmd>lua require'plugins.config.telescope'.help_tags()<CR>]])
