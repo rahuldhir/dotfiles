@@ -4,6 +4,7 @@ vim.cmd 'filetype plugin indent on'
 vim.cmd 'syntax on'
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.wo.cursorline = true
 vim.o.termguicolors = true
 vim.o.background = 'dark'
 vim.cmd 'colorscheme gruvbox'
