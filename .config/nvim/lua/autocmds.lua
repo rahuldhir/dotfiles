@@ -26,7 +26,9 @@ vim.cmd 'au FileType TelescopePrompt setlocal nolist'
 vim.cmd 'augroup end'
 
 -- lua 2 space indent
+vim.cmd 'augroup lua_indent'
 vim.cmd 'au! FileType lua setlocal tabstop=2'
+vim.cmd 'augroup end'
 
 -- completion in all buffers
 vim.cmd 'augroup completion'
@@ -44,6 +46,13 @@ vim.cmd 'augroup end'
 vim.cmd 'augroup really_exit_terminal'
 vim.cmd 'au!'
 vim.cmd 'autocmd TermClose * call feedkeys("i")'
+vim.cmd 'augroup end'
+
+--- Auto-reload files
+vim.cmd 'augroup autoread'
+vim.cmd 'au!'
+vim.cmd 'autocmd FocusGained,BufEnter,CursorHold,CursorHoldI * checktime'
+vim.cmd 'autocmd FileChangedShellPost * echohl InfoMsg | echo "File changed on disk. Buffer reloaded." | echohl None'
 vim.cmd 'augroup end'
 
 function goimports(timeoutms)
