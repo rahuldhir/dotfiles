@@ -14,20 +14,6 @@ packer.startup(function()
     { 'rktjmp/lush.nvim' },
   }}
 
-  -- File Explorer
-  use { 'nvim-telescope/telescope.nvim', requires = {
-    { 'nvim-lua/popup.nvim' },
-    { 'nvim-lua/plenary.nvim' }
-  }}
-  use 'nvim-telescope/telescope-fzy-native.nvim'
-  use 'nvim-telescope/telescope-project.nvim'
-  use { 'kyazdani42/nvim-tree.lua', requires = {
-    { 'kyazdani42/nvim-web-devicons' }
-  }}
-  use { 'lewis6991/gitsigns.nvim', requires = {
-    { 'nvim-lua/plenary.nvim' }
-  }}
-
   -- LSP
   use 'neovim/nvim-lspconfig'
   use 'nvim-lua/completion-nvim'
@@ -37,10 +23,21 @@ packer.startup(function()
   use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
   use { 'nvim-treesitter/completion-treesitter' }
 
-  -- Other?
-  use 'liuchengxu/vim-which-key'
-  use 'SirVer/ultisnips'
-  use 'Shougo/context_filetype.vim'
+  -- Telescope
+  use { 'nvim-telescope/telescope.nvim', requires = {
+    { 'nvim-lua/popup.nvim' },
+    { 'nvim-lua/plenary.nvim' }
+  }}
+  use 'nvim-telescope/telescope-fzy-native.nvim'
+  use 'nvim-telescope/telescope-project.nvim'
+
+  -- File Explorer
+  use { 'kyazdani42/nvim-tree.lua', requires = {
+    { 'kyazdani42/nvim-web-devicons' }
+  }}
+  use { 'lewis6991/gitsigns.nvim', requires = {
+    { 'nvim-lua/plenary.nvim' }
+  }}
 end)
 
 -- Plugin Configs

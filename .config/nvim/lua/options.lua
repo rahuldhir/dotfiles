@@ -1,5 +1,13 @@
 vim.cmd 'filetype plugin indent on'
 
+-- Display
+vim.cmd 'syntax on'
+vim.wo.number = true
+vim.wo.relativenumber = true
+vim.o.termguicolors = true
+vim.o.background = 'dark'
+vim.cmd 'colorscheme gruvbox'
+
 -- Completion options
 vim.o.completeopt = 'menuone,noinsert,noselect'
 vim.o.shortmess = vim.o.shortmess .. 'c'
@@ -67,9 +75,6 @@ vim.o.statusline = require 'statusline'.get_statusline()
 vim.o.showtabline = 2
 vim.o.tabline = require 'tabline'.get_tabline()
 
--- Better display
-vim.o.cmdheight = 2
-
 -- Auto reload file if changed outside vim, or just :e!
 vim.o.autoread = true
 
@@ -77,6 +82,5 @@ vim.o.autoread = true
 vim.wo.list = true
 vim.o.listchars = [[tab:| ,trail:·]]
 
--- More natural splits
-vim.o.splitbelow = true
-vim.o.splitright = true
+-- Omnifunc
+vim.o.omnifunc = 'v:lua.vim.lsp.omnifunc'

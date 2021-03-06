@@ -1,12 +1,9 @@
 vim.cmd 'command! Config edit $MYVIMRC'
 vim.cmd [[command! ConfigReload lua require'utils'.reload_config()]]
 
--- I can't release my shift key fast enough :')
+-- sticky shift
 vim.cmd 'command! -nargs=* W w'
 vim.cmd 'command! -nargs=* Wq wq'
 vim.cmd 'command! -nargs=* Q q'
 vim.cmd 'command! -nargs=* Qa qa'
 vim.cmd 'command! -nargs=* QA qa'
-
--- Toggle MD/Json quotes
-vim.cmd [[command! ToggleConceal lua require'utils'.toggle_conceal()]]

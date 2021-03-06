@@ -16,7 +16,8 @@ utils.nnoremap('<leader>ft', ':NvimTreeToggle<CR>')
 utils.nnoremap('<Tab>', '<C-W>W')
 
 -- Terminal
-utils.nnoremap('<leader>\'', ':terminal<CR>A')
+utils.nnoremap('<leader>t', ':split | resize 20 | terminal<CR>A')
+utils.nnoremap('<leader>T', ':vsplit | terminal<CR>A')
 
 -- Which Key
 utils.nnoremap('<leader>', ':WhichKeyVisual "<Space>"<CR>')
@@ -26,6 +27,10 @@ utils.inoremap('<C-Space>', '<C-x><C-o>')
 
 -- Disable highlights
 utils.nnoremap('<leader>sc', ':noh<CR>')
+
+-- Completion window navigation
+utils.inoremap('<Tab>', 'vim.fn.pumvisible() ? "<C-n>" : "<Tab>"')
+utils.inoremap('<S-Tab>', 'vim.fn.pumvisible() ? "<C-p>" : "<S-Tab>"')
 
 -- Buffer maps
 -- -----------
@@ -43,14 +48,6 @@ utils.nnoremap('<down>',  ':resize -2<CR>')
 utils.nnoremap('<left>',  ':vertical resize -2<CR>')
 utils.nnoremap('<right>', ':vertical resize +2<CR>')
 
--- Text maps
--- ---------
--- Move a line of text Alt+[j/k]
-utils.nnoremap('<M-j>', [[mz:m+<CR>`z]])
-utils.nnoremap('<M-k>', [[mz:m-2<CR>`z]])
-utils.vnoremap('<M-j>', [[:m'>+<CR>`<my`>mzgv`yo`z]])
-utils.vnoremap('<M-k>', [[:m'<-2<CR>`>my`<mzgv`yo`z]])
-
 -- Reload file
 utils.nnoremap('<leader>r', ':e!<CR>')
 
@@ -64,11 +61,18 @@ utils.nnoremap('<leader>fb', [[<cmd>lua require'plugins.config.telescope'.buffer
 utils.nnoremap('<leader>fh', [[<cmd>lua require'plugins.config.telescope'.help_tags()<CR>]])
 
 -- LSP
-utils.nnoremap('<leader>lm', '<cmd>lua vim.lsp.diagnostic.code_action()<CR>')
 utils.nnoremap('gd', '<cmd>lua vim.lsp.buf.definition()<CR>')
-utils.nnoremap('<leader>lf', '<cmd>lua vim.lsp.buf.formatting()<CR>')
-utils.nnoremap('K', '<cmd>lua vim.lsp.buf.references()<CR>')
-utils.nnoremap('<leader>lh', '<cmd>lua vim.lsp.buf.hover()<CR>')
-utils.nnoremap('<leader>la', '<cmd>lua vim.lsp.buf.code_action()<CR>')
-utils.nnoremap('<leader>le', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
-utils.nnoremap('<F2>', '<cmd>lua vim.lsp.buf.rename()<CR>')
+utils.nnoremap('K', '<cmd>lua vim.lsp.buf.hover()<CR>')
+utils.nnoremap('gi', '<cmd>lua vim.lsp.buf.implementation()<CR>')
+utils.nnoremap('gD', '<cmd>lua vim.lsp.buf.type_definition()<CR>')
+utils.nnoremap('gr', '<cmd>lua vim.lsp.buf.references()<CR>')
+utils.nnoremap('<leader>rn', '<cmd>lua vim.lsp.buf.rename()<CR>')
+utils.nnoremap('<leader>wa', '<cmd>lua vim.lsp.buf.add_workspace_folder()<CR>')
+utils.nnoremap('<leader>wr', '<cmd>lua vim.lsp.buf.remove_workspace_folder()<CR>')
+utils.nnoremap('<leader>wl', '<cmd>lua print(vim.inspect(vim.lsp.buf.list_workspace_folders()))<CR>')
+utils.nnoremap('<leader>D', '<cmd>lua vim.lsp.buf.declaration()<CR>')
+utils.nnoremap('<leader>e', '<cmd>lua vim.lsp.diagnostic.show_line_diagnostics()<CR>')
+utils.nnoremap('<leader>q', '<cmd>lua vim.lsp.diagnostic.set_loclist()<CR>')
+utils.nnoremap('<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>')
+utils.nnoremap('[d', '<cmd>lua vim.lsp.diagnostic.goto_prev()<CR>')
+utils.nnoremap(']d', '<cmd>lua vim.lsp.diagnostic.goto_next()<CR>')

@@ -91,10 +91,6 @@ function M.render()
     end
   end
 
-  -- TODO
-  -- Find out a way to truncate the tabline, if there are too many
-  -- buffers open. Show only the highlighted on
-
   -- after the last tab fill with TabLineFill and reset tab page nr
   table.insert(bufferline, HI_TABLINE_FILL)
 

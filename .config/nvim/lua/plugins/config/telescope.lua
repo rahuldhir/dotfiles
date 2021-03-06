@@ -18,14 +18,6 @@ telescope.setup {
 telescope.load_extension('fzy_native')
 telescope.load_extension('project')
 
-function M.find_files()
-  local config_dir = os.getenv('HOME') .. '/.config/nvim'
-  telescope_builtin.find_files {
-    find_command = { 'rg', '--files', '--iglob', '!.git', '--hidden', '.', config_dir },
-    previewer = false
-  }
-end
-
 function M.live_grep()
   telescope_builtin.live_grep {}
 end
