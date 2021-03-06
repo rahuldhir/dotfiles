@@ -19,6 +19,8 @@ packer.startup(function()
     { 'nvim-lua/popup.nvim' },
     { 'nvim-lua/plenary.nvim' }
   }}
+  use 'nvim-telescope/telescope-fzy-native.nvim'
+  use 'nvim-telescope/telescope-project.nvim'
   use { 'kyazdani42/nvim-tree.lua', requires = {
     { 'kyazdani42/nvim-web-devicons' }
   }}
