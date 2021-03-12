@@ -5,7 +5,7 @@ local M = {}
 
 telescope.setup {
   defaults = {
-    layout_strategy = 'vertical',
+    layout_strategy = 'flex',
     use_less = false,
     mappings = {
       i = {
@@ -16,6 +16,8 @@ telescope.setup {
   }
 }
 telescope.load_extension('fzy_native')
+telescope.load_extension('gh')
+telescope.load_extension('packer')
 telescope.load_extension('project')
 
 function M.live_grep()

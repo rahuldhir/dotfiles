@@ -14,6 +14,11 @@ packer.startup(function()
     { 'rktjmp/lush.nvim' },
   }}
 
+  -- Tab Bar
+  use {'romgrk/barbar.nvim', requires = {
+    { 'kyazdani42/nvim-web-devicons' },
+  }}
+
   -- LSP
   use 'neovim/nvim-lspconfig'
   use 'nvim-lua/lsp-status.nvim'
@@ -28,6 +33,8 @@ packer.startup(function()
     { 'nvim-lua/popup.nvim' },
     { 'nvim-lua/plenary.nvim' },
     { 'nvim-telescope/telescope-fzy-native.nvim' },
+    { 'nvim-telescope/telescope-github.nvim' },
+    { 'nvim-telescope/telescope-packer.nvim' },
     { 'nvim-telescope/telescope-project.nvim' },
   }}
 

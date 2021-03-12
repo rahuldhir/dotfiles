@@ -40,7 +40,7 @@ vim.cmd 'augroup end'
 -- goimports on save
 vim.cmd 'augroup go_imports'
 vim.cmd 'au!'
-vim.cmd 'au BufWritePre *.go lua goimports(1000)'
+vim.cmd 'au BufWritePre *.go lua goimports(5000)'
 vim.cmd 'augroup end'
 
 -- really exit terminal on <C-d>
