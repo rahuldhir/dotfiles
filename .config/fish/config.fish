@@ -1,22 +1,16 @@
-# Aliases
-alias dotfiles='/usr/bin/git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
-alias ls='lsd'
-alias vi='nvim'
-alias vim='nvim'
-alias view='nvim -M'
-alias python='python3'
-alias pip='pip3'
-
 # Shell Variables
 set -Ux EDITOR nvim
 set -Ux GOPATH $HOME/go
 set -x PATH /usr/local/bin $GOPATH/bin /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin $PATH
 set -g fish_key_bindings hybrid_bindings
 set -g fish_escape_delay_ms 10
-set -x BUILD_ENV_PREFER_LOCAL true
 set -x SPACEVIMDIR $HOME/.config/SpaceVim.d/
 
-# Functions
+# Aliases
+alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
+alias ls='lsd'
+alias vi='nvim'
+alias view='nvim -M'
 function tree
     if count $argv  > /dev/null
         set search_path $argv
@@ -29,6 +23,7 @@ function tree
     /usr/local/bin/tree -C -I "$ignore_paths" $search_path
 end
 
+# Key Bindings
 function hybrid_bindings
     for mode in default insert visual
         fish_default_key_bindings -M $mode
