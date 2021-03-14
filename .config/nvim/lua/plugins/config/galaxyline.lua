@@ -82,7 +82,7 @@ gls.left[4] = {
     provider = { 'FileName', 'FileSize' },
     condition = buffer_not_empty,
     highlight = { colors.fg, colors.section_bg },
-    separator = " ",
+    separator = "",
     separator_highlight = {colors.section_bg, colors.bg},
   }
 }
@@ -170,9 +170,9 @@ gls.left[15] = {
 -- Right side
 gls.right[1]= {
   FileFormat = {
-    provider = function() return vim.bo.filetype end,
+    provider = function() return ' ' .. vim.bo.filetype end,
     highlight = { colors.fg,colors.section_bg },
-    separator = ' ',
+    separator = '',
     separator_highlight = { colors.section_bg,colors.bg },
   }
 }
@@ -186,10 +186,8 @@ gls.right[2] = {
 }
 gls.right[3] = {
   Heart = {
-    provider = function() return ' ' end,
+    provider = function() return ' ' end,
     highlight = { colors.red, colors.section_bg },
-    separator = ' | ',
-    separator_highlight = { colors.bg, colors.section_bg },
   }
 }
 
