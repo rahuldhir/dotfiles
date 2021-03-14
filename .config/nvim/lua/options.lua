@@ -67,15 +67,6 @@ vim.o.mouse = 'a'
 -- backspace behaviour
 vim.o.backspace = 'indent,eol,start'
 
--- Status line
-vim.o.showmode = false
-vim.o.laststatus = 2
-vim.o.statusline = require 'statusline'.get_statusline()
-
--- Tab line
-vim.o.showtabline = 2
-vim.o.tabline = require 'tabline'.get_tabline()
-
 -- Auto reload file if changed outside vim, or just :e!
 vim.o.autoread = true
 

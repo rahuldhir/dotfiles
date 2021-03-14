@@ -35,24 +35,14 @@ utils.inoremap('<S-Tab>', 'vim.fn.pumvisible() ? "<C-p>" : "<S-Tab>"')
 -- Buffer maps
 -- -----------
 -- List all buffers
-utils.nnoremap('<leader>ba', ':buffers<CR>')
-utils.nnoremap('<leader>bn', ':enew<CR>')
+utils.nnoremap('<leader>ba', [[<cmd>lua require'plugins.config.telescope'.buffers()<CR>]])
+utils.nnoremap('<leader>bc', ':enew<CR>')
 utils.nnoremap('<leader>bd', ':bp<BAR>sp<BAR>bn<BAR>bd<CR>')
 utils.nnoremap('<C-l>',      ':bnext<CR>')
 utils.nnoremap('<C-h>',      ':bprevious<CR>')
 
--- Resize window panes, we can use those arrow keys
--- to help use resize windows - at least we give them some purpose
-utils.nnoremap('<up>',    ':resize +2<CR>')
-utils.nnoremap('<down>',  ':resize -2<CR>')
-utils.nnoremap('<left>',  ':vertical resize -2<CR>')
-utils.nnoremap('<right>', ':vertical resize +2<CR>')
-
--- Reload file
-utils.nnoremap('<leader>r', ':e!<CR>')
-
 -- Reload config
-utils.nnoremap('<leader>vs', '<cmd>ConfigReload<CR>')
+utils.nnoremap('<leader>r', '<cmd>ConfigReload<CR>')
 
 -- Telescope
 utils.nnoremap('<leader>ff', [[<cmd>lua require'telescope.builtin'.find_files()<CR>]])

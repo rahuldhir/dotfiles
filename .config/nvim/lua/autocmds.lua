@@ -4,21 +4,12 @@ vim.cmd 'au!'
 vim.cmd 'au TextYankPost * silent! lua vim.highlight.on_yank({ higroup = "Search", timeout = 500 })'
 vim.cmd 'augroup end'
 
--- Statusline/Tabline highlights
-vim.cmd 'augroup statusline_tabline_hl'
+vim.cmd 'augroup status_line_init'
 vim.cmd 'au!'
-vim.cmd 'au ColorScheme * lua require"statusline".set_highlights()'
-vim.cmd 'au ColorScheme * lua require"tabline".set_highlights()'
-vim.cmd 'augroup end'
+vim.cmd 'au VimEnter * lua require("plugins.config.galaxyline")'
+vim.cmd 'augroup END'
 
--- Statusline
-vim.cmd 'augroup statusline_local'
-vim.cmd 'au!'
-vim.cmd 'au WinEnter * lua require"statusline".setlocal_active_statusline()'
-vim.cmd 'au WinLeave * lua require"statusline".setlocal_inactive_statusline()'
-vim.cmd 'augroup end'
-
- -- Enable invisible chars
+-- Enable invisible chars
 vim.cmd 'augroup disable_char_list'
 vim.cmd 'au!'
 vim.cmd 'au FileType help setlocal nolist'
