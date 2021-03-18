@@ -16,7 +16,7 @@ vim.o.shortmess = vim.o.shortmess .. 'c'
 -- Search options
 vim.o.hlsearch = true
 vim.o.incsearch = true
-vim.o.ignorecase = true
+vim.o.ignorecase = false
 vim.o.smartcase = true
 vim.o.wrapscan = true
 

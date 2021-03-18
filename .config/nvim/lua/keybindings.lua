@@ -3,6 +3,9 @@ local utils = require 'utils'
 -- Leader
 vim.g.mapleader = ' '
 
+-- Quick Quit
+utils.nnoremap('qq', ':q<CR>')
+
 -- Map escape from terminal input to Normal mode
 utils.tnoremap('<ESC>', [[<C-\><C-n>]])
 utils.tnoremap('<C-[>', [[<C-\><C-n>]])
@@ -33,8 +36,6 @@ utils.inoremap('<Tab>', 'vim.fn.pumvisible() ? "<C-n>" : "<Tab>"')
 utils.inoremap('<S-Tab>', 'vim.fn.pumvisible() ? "<C-p>" : "<S-Tab>"')
 
 -- Buffer maps
--- -----------
--- List all buffers
 utils.nnoremap('<leader>ba', [[<cmd>lua require'plugins.config.telescope'.buffers()<CR>]])
 utils.nnoremap('<leader>bc', ':enew<CR>')
 utils.nnoremap('<leader>bd', ':bp<BAR>sp<BAR>bn<BAR>bd<CR>')
