@@ -22,6 +22,12 @@ vim.cmd 'au!'
 vim.cmd 'au FileType lua setlocal tabstop=2'
 vim.cmd 'augroup end'
 
+-- yaml 2 space indent
+vim.cmd 'augroup lua_indent'
+vim.cmd 'au!'
+vim.cmd 'au FileType yaml setlocal tabstop=2'
+vim.cmd 'augroup end'
+
 -- completion in all buffers
 vim.cmd 'augroup completion'
 vim.cmd 'au!'
