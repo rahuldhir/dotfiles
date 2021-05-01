@@ -1,7 +1,7 @@
 # Shell Variables
 set -Ux EDITOR nvim
 set -Ux GOPATH $HOME/go
-set -x PATH /usr/local/bin $GOPATH/bin /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin $PATH
+set -x PATH /usr/local/bin $GOPATH/bin /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin /usr/bin /bin /usr/sbin /sbin
 set -g fish_key_bindings hybrid_bindings
 set -g fish_escape_delay_ms 10
 set -x SPACEVIMDIR $HOME/.config/SpaceVim.d/
