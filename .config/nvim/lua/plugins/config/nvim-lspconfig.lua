@@ -34,3 +34,11 @@ local servers = {
 for _, lsp in ipairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
+
+nvim_lsp.yamlls.setup{
+  settings = {
+    yaml = {
+      schemas = { kubernetes = "globPattern" },
+    }
+  }
+}
