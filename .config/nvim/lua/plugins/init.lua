@@ -39,19 +39,16 @@ packer.startup(function()
   use { 'nvim-treesitter/nvim-treesitter-textobjects' }
   use { 'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = require'nvim-treesitter.configs'.setup {
-      ensure_installed = 'all',
-      highlight = {enable = true, disable = {}},
-      indent = {enable = true},
-      use_languagetree = false,
-      incremental_selection = {
-        enable = true,
-        keymaps = {
-          init_selection = 'gnn',
-          node_incremental = 'grn',
-          scope_incremental = 'grc',
-          node_decremental = 'grm',
-        },
+    ensure_installed = 'all',
+    highlight = {enable = true, disable = {}},
+    indent = {enable = true},
+    incremental_selection = {
+      enable = true,
+      keymaps = {
+        init_selection = 'gnn',
+        node_incremental = 'grn',
+        scope_incremental = 'grc',
+        node_decremental = 'grm',
       },
     },
   }
