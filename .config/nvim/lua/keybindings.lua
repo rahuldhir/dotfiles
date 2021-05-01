@@ -32,8 +32,8 @@ utils.inoremap('<C-Space>', '<C-x><C-o>')
 utils.nnoremap('<leader>sc', ':noh<CR>')
 
 -- Completion window navigation
-utils.inoremap('<Tab>', 'vim.fn.pumvisible() ? "<C-n>" : "<Tab>"')
-utils.inoremap('<S-Tab>', 'vim.fn.pumvisible() ? "<C-p>" : "<S-Tab>"')
+utils.inoremapexpr('<Tab>', 'pumvisible() ? "\\<C-n>" : "\\<Tab>"')
+utils.inoremapexpr('<S-Tab>', 'pumvisible() ? "\\<C-p>" : "\\<S-Tab>"')
 
 -- Buffer maps
 utils.nnoremap('<leader>ba', [[<cmd>lua require'plugins.config.telescope'.buffers()<CR>]])

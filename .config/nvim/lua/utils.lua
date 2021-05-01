@@ -4,13 +4,16 @@ local function map(type, input, output)
   vim.api.nvim_set_keymap(type, input, output, {})
 end
 
-local function noremap(type, input, output)
-  vim.api.nvim_set_keymap(type, input, output, { noremap = true, silent = true })
+local function noremap(type, input, output, expr)
+  expr = false or expr
+  vim.api.nvim_set_keymap(type, input, output, { expr = expr, noremap = true, silent = true })
 end
 
 function M.nnoremap(input, output) noremap('n', input, output) end
 
 function M.inoremap(input, output) noremap('i', input, output) end
+
+function M.inoremapexpr(input, output) noremap('i', input, output, true) end
 
 function M.vnoremap(input, output) noremap('v', input, output) end
 
