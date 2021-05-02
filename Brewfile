@@ -1,5 +1,4 @@
 bat
-ctags
 fd
 fish
 fzf
