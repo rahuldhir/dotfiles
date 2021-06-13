@@ -73,6 +73,8 @@ packer.startup(function()
       { 'nvim-lua/plenary.nvim' },
     },
   }
+
+  use { 'godlygeek/tabular' }
 end)
 
 -- Plugin Configs
