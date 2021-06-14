@@ -20,6 +20,10 @@ telescope.load_extension('gh')
 telescope.load_extension('packer')
 telescope.load_extension('project')
 
+function M.find_files()
+  telescope_builtin.find_files {}
+end
+
 function M.live_grep()
   telescope_builtin.live_grep {}
 end

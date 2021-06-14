@@ -46,7 +46,7 @@ utils.nnoremap('<C-h>',      ':bprevious<CR>')
 utils.nnoremap('<leader>r', '<cmd>ConfigReload<CR>')
 
 -- Telescope
-utils.nnoremap('<leader>ff', [[<cmd>lua require'telescope.builtin'.find_files()<CR>]])
+utils.nnoremap('<leader>ff', [[<cmd>lua require'plugins.config.telescope'.find_files()<CR>]])
 utils.nnoremap('<leader>fg', [[<cmd>lua require'plugins.config.telescope'.live_grep()<CR>]])
 utils.nnoremap('<leader>fb', [[<cmd>lua require'plugins.config.telescope'.buffers()<CR>]])
 utils.nnoremap('<leader>fh', [[<cmd>lua require'plugins.config.telescope'.help_tags()<CR>]])
