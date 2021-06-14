@@ -1,8 +1,3 @@
--- refresh tree to avoid empty buffer when lazy loading
-require'nvim-tree.events'.on_nvim_tree_ready(function ()
-  vim.cmd("NvimTreeRefresh")
-end)
-
 local function get_lua_cb(cb_name)
   return string.format(":lua require'nvim-tree'.on_keypress('%s')<CR>", cb_name)
 end
