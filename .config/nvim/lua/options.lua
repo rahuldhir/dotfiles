@@ -13,6 +13,9 @@ vim.cmd 'colorscheme gruvbox'
 vim.o.completeopt = 'menuone,noinsert,noselect'
 vim.o.shortmess = vim.o.shortmess .. 'c'
 
+-- Clipboard options
+vim.o.clipboard = 'unnamed'
+
 -- Search options
 vim.o.hlsearch = true
 vim.o.incsearch = true
