@@ -17,7 +17,6 @@ telescope.setup {
 }
 telescope.load_extension('fzy_native')
 telescope.load_extension('gh')
-telescope.load_extension('packer')
 telescope.load_extension('project')
 
 function M.find_files()
