@@ -2,6 +2,8 @@ local nvim_lsp = require('lspconfig')
 
 -- map buffer local keybindings when the language server attaches
 local on_attach = function(client, bufnr)
+  require'completion'.on_attach()
+
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
   local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
@@ -24,7 +26,7 @@ local servers = {
   "gopls",
   "graphql",
   "jsonls",
-  "pyls",
+  "pylsp",
   "sumneko_lua",
   "terraformls",
   "tsserver",
