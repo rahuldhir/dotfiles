@@ -85,7 +85,7 @@ scrolling:
 font:
   # Normal (roman) font face
   normal:
-    family: SauceCodePro Nerd Font Mono
+    family: Hack Nerd Font Mono
     # Font family
     #
     # Default:
