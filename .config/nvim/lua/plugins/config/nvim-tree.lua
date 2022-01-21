@@ -19,4 +19,4 @@ nvim_tree.setup {
 
 -- https://github.com/kyazdani42/nvim-tree.lua/blob/905afba20900caea1e6f0f541c2ed7302de9f598/lua/nvim-tree/config.lua#L61-L85
 vim.g.nvim_tree_git_hl = 1
-vim.g.nvim_tree_quit_on_open = 1
+vim.g.nvim_tree_quit_on_open = 0
