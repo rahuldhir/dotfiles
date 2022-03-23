@@ -17,7 +17,7 @@ function tree
     else
         set search_path .
     end
-    set global_ignore_paths (cat ~/.gitignore_global | grep -v '^#' | tr [:space:] "|")
+    set global_ignore_paths (cat ~/.config/git/gitignore_global | grep -v '^#' | tr [:space:] "|")
     set local_ignore_paths (git check-ignore */* 2>/dev/null | xargs basename | tr [:space:] "|")
     set ignore_paths (echo $global_ignore_paths$local_ignore_paths | sed 's/.$//' | sed 's/||/|/g')
     /usr/local/bin/tree -C -I "$ignore_paths" $search_path
