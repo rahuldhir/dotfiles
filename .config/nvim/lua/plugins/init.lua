@@ -28,13 +28,6 @@ packer.startup {
       },
     }
 
-    -- Status Line
-    use { 'glepnir/galaxyline.nvim', requires = {
-        { 'kyazdani42/nvim-web-devicons', opt = true },
-      },
-      branch = 'main',
-    }
-
     -- LSP
     use { 'neovim/nvim-lspconfig' }
     use { 'nvim-lua/lsp-status.nvim' }
@@ -89,7 +82,6 @@ packer.startup {
 
 -- Plugin Configs
 local current_path = (...):gsub('%.init$', '')
-require(current_path .. '.config.galaxyline')
 require(current_path .. '.config.gitsigns')
 require(current_path .. '.config.nvim-lspconfig')
 require(current_path .. '.config.nvim-tree')
