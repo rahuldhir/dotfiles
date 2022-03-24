@@ -2,10 +2,7 @@ local nvim_lsp = require('lspconfig')
 
 -- map buffer local keybindings when the language server attaches
 local on_attach = function(client, bufnr)
-  require'completion'.on_attach()
-
   local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-  local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
   -- Set some keybinds conditional on server capabilities
   local opts = { noremap=true, silent=true }
@@ -29,18 +26,26 @@ local servers = {
   "pylsp",
   "sumneko_lua",
   "terraformls",
-  "tsserver",
-  "vuels",
   "yamlls",
 }
-for _, lsp in ipairs(servers) do
+for _, lsp in pairs(servers) do
   nvim_lsp[lsp].setup { on_attach = on_attach }
 end
 
-nvim_lsp.yamlls.setup{
+nvim_lsp.yamlls.setup {
   settings = {
     yaml = {
       schemas = { kubernetes = "globPattern" },
+    }
+  }
+}
+
+nvim_lsp.sumneko_lua.setup {
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = { 'vim' }
+      }
     }
   }
 }

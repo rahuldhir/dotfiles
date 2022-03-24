@@ -28,14 +28,18 @@ packer.startup {
       },
     }
 
+    -- Status Line
+    use { 'nvim-lualine/lualine.nvim', requires = {
+        { 'kyazdani42/nvim-web-devicons' },
+      },
+    }
+
     -- LSP
     use { 'neovim/nvim-lspconfig' }
-    use { 'nvim-lua/lsp-status.nvim' }
-    use { 'nvim-lua/completion-nvim' }
+    use { 'ms-jpq/coq_nvim', branch = "coq" }
+    use { 'ms-jpq/coq.artifacts', branch = "artifacts" }
 
     -- Tree Sitter
-    use { 'nvim-treesitter/completion-treesitter' }
-    use { 'nvim-treesitter/nvim-treesitter-textobjects' }
     use { 'nvim-treesitter/nvim-treesitter',
       run = ':TSUpdate',
       ensure_installed = 'all',
@@ -83,6 +87,7 @@ packer.startup {
 -- Plugin Configs
 local current_path = (...):gsub('%.init$', '')
 require(current_path .. '.config.gitsigns')
+require(current_path .. '.config.lualine')
 require(current_path .. '.config.nvim-lspconfig')
 require(current_path .. '.config.nvim-tree')
 require(current_path .. '.config.startify')
