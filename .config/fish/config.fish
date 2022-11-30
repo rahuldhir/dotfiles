@@ -6,6 +6,8 @@ set -x PATH /usr/local/bin $GOPATH/bin /usr/local/Caskroom/google-cloud-sdk/late
 set -g fish_key_bindings hybrid_bindings
 set -g fish_escape_delay_ms 10
 
+test -e ~/repos/github.com/TOKEN && set -x GITHUB_TOKEN (cat ~/repos/github.com/TOKEN)
+
 # Aliases
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls='lsd'
@@ -30,3 +32,5 @@ function hybrid_bindings
     end
     fish_vi_key_bindings --no-erase
 end
+
+bass source /usr/local/opt/nvm/nvm.sh --no-use ';'
