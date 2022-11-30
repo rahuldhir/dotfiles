@@ -1,16 +1,16 @@
 # Shell Variables
-set -Ux EDITOR nvim
+set -Ux EDITOR lvim
 set -Ux GOPATH $HOME/go
-set -x PATH /usr/local/bin $GOPATH/bin /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin /usr/bin /bin /usr/sbin /sbin
+set -x SHELL /usr/local/bin/fish
+set -x PATH /usr/local/bin $GOPATH/bin /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin ~/.local/bin /usr/bin /bin /usr/sbin /sbin
 set -g fish_key_bindings hybrid_bindings
 set -g fish_escape_delay_ms 10
-set -x SPACEVIMDIR $HOME/.config/SpaceVim.d/
 
 # Aliases
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls='lsd'
-alias vi='nvim'
-alias view='nvim -M'
+alias vi='lvim'
+alias view='lvim -M'
 function tree
     if count $argv  > /dev/null
         set search_path $argv

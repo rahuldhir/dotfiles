@@ -1,5 +1,0 @@
-require 'plugins'
-require 'autocmds'
-require 'options'
-require 'keybindings'
-require 'commands'
