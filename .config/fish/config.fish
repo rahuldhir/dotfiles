@@ -2,11 +2,14 @@
 set -Ux EDITOR lvim
 set -Ux GOPATH $HOME/go
 set -x SHELL /usr/local/bin/fish
-set -x PATH /usr/local/bin $GOPATH/bin /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin ~/.local/bin /usr/bin /bin /usr/sbin /sbin
+set -x PATH /usr/local/bin $GOPATH/bin /usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin ~/.docker/bin ~/.local/bin /usr/bin /bin /usr/sbin /sbin
 set -g fish_key_bindings hybrid_bindings
 set -g fish_escape_delay_ms 10
 
+set -x USE_GKE_GCLOUD_AUTH_PLUGIN True
+
 test -e ~/repos/github.com/TOKEN && set -x GITHUB_TOKEN (cat ~/repos/github.com/TOKEN)
+test -e ~/repos/github.com/TOKEN && set -x HOMEBREW_GITHUB_API_TOKEN (cat ~/repos/github.com/TOKEN)
 
 # Aliases
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
