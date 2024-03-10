@@ -5,8 +5,13 @@ export XDG_CONFIG_HOME=~/.config
 export XDG_DATA_HOME=~/.local/share
 export XDG_STATE_HOME=~/.local/state
 
-export HISTFILE=$XDG_STATE_HOME/zsh/history
-export LESSHISTFILE=$XDG_STATE_HOME/less/history
+export HISTFILE=$ZDOTDIR/.zsh_history
+export LESSHISTFILE="-"
+export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
+export KUBECONFIG=$XDG_CONFIG_HOME/kube/config
+export KUBECACHEDIR=$XDG_CACHE_HOME/kube
+export NVM_DIR=$XDG_CONFIG_HOME/nvm
+
 export EDITOR=lvim
 export GOPATH=~/go
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
