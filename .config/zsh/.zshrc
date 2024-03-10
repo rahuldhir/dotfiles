@@ -2,7 +2,10 @@ alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls='lsd'
 alias vi='lvim'
 alias view='lvim -M'
-alias tree='rg --files | tree --fromfile'
+tree-git-seen() {
+  rg --files --hidden --ignore --glob '!.git/' "$@" | tree --fromfile -aC
+}
+alias tree='tree-git-seen'
 
 bindkey -e
 bindkey \^U backward-kill-line
@@ -13,6 +16,7 @@ if type brew &>/dev/null; then
 
   autoload -Uz compinit
   compinit
+  _comp_options+=(globdots)
 
   source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 fi
