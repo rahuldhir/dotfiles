@@ -1,8 +1,8 @@
 window = { startup_mode = "Fullscreen" }
 
 [shell]
-program = "/opt/homebrew/bin/tmux"
-args = ["new", "-As", "local"]
+program = "/bin/zsh"
+args = ["-c", "tmux new -As local"]
 
 [font]
 size = 12.0
