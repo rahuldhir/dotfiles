@@ -1,37 +1,35 @@
 '$schema' = 'https://starship.rs/config-schema.json'
 
+format = """
+$directory\
+$kubernetes\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$line_break\
+$character\
+"""
 add_newline = false
 
-[buf]
-disabled = true
-
 [character]
-success_symbol = '[>](bold green)'
+success_symbol = '[>](bold white)'
 error_symbol = '[>](bold red)'
-vimcmd_symbol = '[<](bold green)'
+vimcmd_symbol = '[<](bold white)'
 vimcmd_replace_one_symbol	= '[<](bold purple)'
 vimcmd_replace_symbol	= '[<](bold purple)'
 vimcmd_visual_symbol= '[<](bold yellow)'
 
-[cmd_duration]
-disabled = true
-
 [directory]
+style = 'bold green'
 fish_style_pwd_dir_length = 1
 truncate_to_repo = false
 truncation_length = 1
 
-[gcloud]
-disabled = true
-
-[golang]
-disabled = true
-
-[nodejs]
-disabled = true
-
-[package]
-disabled = true
+[git_branch]
+format = '[$branch]($style) '
 
 [kubernetes]
+format = '[$context](bold blue):[$namespace](bold yellow) '
 disabled = false
