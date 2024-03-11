@@ -6,7 +6,6 @@ $kubernetes\
 $git_branch\
 $git_commit\
 $git_state\
-$git_metrics\
 $git_status\
 $line_break\
 $character\
@@ -28,7 +27,23 @@ truncate_to_repo = false
 truncation_length = 1
 
 [git_branch]
-format = '[$branch]($style) '
+format = '[$branch](bold white) '
+
+[git_commit]
+style = 'bold red'
+
+[git_status]
+format = '$all_status$ahead_behind'
+conflicted = '[=](bold red)'
+ahead = '[⇡](bold green)'
+behind = '[⇣](bold red)'
+diverged = '[⇕](bold yellow)'
+untracked = '[?](bold red)'
+stashed = '[$](bold blue)'
+modified = '[!](bold yellow)'
+staged = '[+](bold green)'
+renamed = '[»](bold purple)'
+deleted = '[✘](bold red)'
 
 [kubernetes]
 format = '[$context](bold blue):[$namespace](bold yellow) '
