@@ -3,7 +3,7 @@ alias ls='lsd'
 alias vi='lvim'
 alias view='lvim -M'
 alias tree='f(){ cd "$@" && rg --files -. --ignore -g "!.git/" | tree --fromfile -aC };f'
-alias decodejwt="jq -R 'split(\".\") | .[1] | @base64d | fromjson'"
+alias decodejwt='jq -R "split(\".\") | .[1] | @base64d | fromjson"'
 
 bindkey -e
 bindkey \^U backward-kill-line
