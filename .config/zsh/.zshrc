@@ -5,8 +5,8 @@ alias view='lvim -M'
 alias tree='f(){ cd "$@" && rg --files -. --ignore -g "!.git/" | tree --fromfile -aC };f'
 alias decodejwt='jq -R "split(\".\") | .[1] | @base64d | fromjson"'
 
+setopt SHARE_HISTORY
 bindkey -e \^U backward-kill-line
-
 autoload -Uz compinit; compinit
 _comp_options+=(globdots)
 
