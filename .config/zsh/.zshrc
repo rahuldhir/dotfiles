@@ -10,6 +10,7 @@ bindkey -e \^U backward-kill-line
 autoload -Uz compinit; compinit
 _comp_options+=(globdots)
 
+type kubectl &>/dev/null && source <(kubectl completion zsh)
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.config/zsh/plugins/fzf-tab/fzf-tab.plugin.zsh
 [ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"
