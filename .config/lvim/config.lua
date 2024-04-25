@@ -3,6 +3,7 @@ lvim.format_on_save = true
 
 lvim.builtin.alpha.dashboard.section.header.val = function() return "\"Vim\"" end
 lvim.builtin.alpha.dashboard.section.footer.val = function() return "" end
+lvim.builtin.project.patterns = { ".git" }
 
 require("lvim.lsp.null-ls.formatters").setup({ { exe = "goimports", filetypes = { "go" } } })
 require("lvim.lsp.null-ls.linters").setup({ { command = "golangci-lint", filetypes = { "go" } } })
@@ -52,7 +53,8 @@ lvim.plugins = {
       notify = { enabled = false }
     },
     dependencies = { "MunifTanjim/nui.nvim" }
-  }
+  },
+  { "apple/pkl-neovim" }
 }
 
 -- Below config is required to prevent copilot overriding Tab with a suggestion
