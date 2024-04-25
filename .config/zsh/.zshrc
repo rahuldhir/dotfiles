@@ -1,7 +1,7 @@
 alias dotfiles='git --git-dir=$HOME/.dotfiles/ --work-tree=$HOME'
 alias ls='lsd'
 alias vi='lvim' view='lvim -R'
-alias tree='f(){ cd "$@" && rg --files -. --ignore -g "!.git/" | tree --fromfile -aC };f'
+alias tree='f(){ cd "${@:-.}" && rg --files -. --ignore -g "!.git/" | tree --fromfile -aC };f'
 alias decodejwt='jq -R "split(\".\") | .[1] | @base64d | fromjson"'
 
 setopt SHARE_HISTORY
