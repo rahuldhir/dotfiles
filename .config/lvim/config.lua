@@ -9,6 +9,7 @@ require("lvim.lsp.null-ls.formatters").setup({ { exe = "goimports", filetypes = 
 require("lvim.lsp.null-ls.linters").setup({ { command = "golangci-lint", filetypes = { "go" } } })
 
 vim.o.cmdheight = 0
+vim.o.termguicolors = false
 
 -- Copilot plugins are defined below:
 lvim.plugins = {
