@@ -1,4 +1,6 @@
-window = { startup_mode = "SimpleFullscreen" }
+[window]
+  startup_mode = "Maximized"
+  decorations = "None"
 
 [shell]
 program = "/bin/zsh"
