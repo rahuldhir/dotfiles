@@ -24,6 +24,7 @@ export USE_GKE_GCLOUD_AUTH_PLUGIN=True
 
 test -e ~/repos/github.com/TOKEN && export GITHUB_TOKEN=$(cat ~/repos/github.com/TOKEN)
 test -e ~/repos/github.com/TOKEN && export HOMEBREW_GITHUB_API_TOKEN=$(cat ~/repos/github.com/TOKEN)
+test -e ~/.config/ANTHROPIC && export ANTHROPIC_API_KEY=$(cat ~/.config/ANTHROPIC)
 
 path=(~/.local/bin $path)
 path=(~/.docker/bin $path)
