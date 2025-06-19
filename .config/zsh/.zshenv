@@ -5,9 +5,6 @@ export XDG_CONFIG_HOME=~/.config
 export XDG_DATA_HOME=~/.local/share
 export XDG_STATE_HOME=~/.local/state
 
-export HISTFILE=$ZDOTDIR/.zsh_history
-export HISTSIZE=256000
-export SAVEHIST=256000
 export LESSHISTFILE="-"
 export DOCKER_CONFIG=$XDG_CONFIG_HOME/docker
 export KUBECONFIG=$XDG_CONFIG_HOME/kube/config
@@ -28,6 +25,7 @@ test -e ~/.config/ANTHROPIC && export ANTHROPIC_API_KEY=$(cat ~/.config/ANTHROPI
 
 path=(~/.local/bin $path)
 path=(~/.docker/bin $path)
+path=(/opt/homebrew/share/google-cloud-sdk/bin $path)
 path=(/usr/local/Caskroom/google-cloud-sdk/latest/google-cloud-sdk/bin $path)
 path=($GOPATH/bin $path)
 path=(/usr/local/bin $path)

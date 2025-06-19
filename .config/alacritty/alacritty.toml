@@ -1,6 +1,5 @@
 [window]
-  startup_mode = "Maximized"
-  decorations = "None"
+  startup_mode = "Windowed"
 
 [shell]
 program = "/bin/zsh"

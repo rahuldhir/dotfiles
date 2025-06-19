@@ -4,11 +4,18 @@ alias vi='lvim' view='lvim -R'
 alias tree='f(){ cd "${@:-.}" && rg --files -. --ignore -g "!.git/" | tree --fromfile -aC && cd -};f'
 alias decodejwt='jq -R "split(\".\") | .[1] | @base64d | fromjson"'
 
-setopt SHARE_HISTORY
 bindkey -e \^U backward-kill-line
 zstyle ':completion:*' completer _complete
 zstyle ':completion:*' matcher-list '' 'm:{[:lower:][:upper:]}={[:upper:][:lower:]}' '+l:|=* r:|=*'
 autoload -Uz compinit; compinit; _comp_options+=(globdots)
+
+setopt APPEND_HISTORY
+setopt SHARE_HISTORY
+export HISTFILE=$ZDOTDIR/.zsh_history
+export HISTSIZE=256000
+export SAVEHIST=256000
+setopt HIST_EXPIRE_DUPS_FIRST
+setopt EXTENDED_HISTORY
 
 type kubectl &>/dev/null && source <(kubectl completion zsh)
 source ~/.config/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
