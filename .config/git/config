@@ -1,0 +1,8 @@
+[user]
+  email = me@rahuldhir.com
+  name = Rahul Dhir
+	signingkey = /Users/rahuldhir/.ssh/github_ed25519.pub
+[gpg]
+	format = ssh
+[commit]
+	gpgsign = true
