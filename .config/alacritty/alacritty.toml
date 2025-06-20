@@ -1,7 +1,7 @@
 [window]
-  startup_mode = "Windowed"
+startup_mode = "Windowed"
 
-[shell]
+[terminal.shell]
 program = "/bin/zsh"
 args = ["-c", "tmux new -As local"]
 
