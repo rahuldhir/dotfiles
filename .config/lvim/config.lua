@@ -7,6 +7,11 @@ lvim.builtin.project.patterns = { ".git" }
 
 require("lvim.lsp.null-ls.formatters").setup({ { exe = "goimports", filetypes = { "go" } } })
 require("lvim.lsp.null-ls.linters").setup({ { command = "golangci-lint", filetypes = { "go" } } })
+require("lspconfig").gopls.setup({
+  on_attach = function(client)
+    client.resolved_capabilities.document_formatting = false
+  end
+})
 
 vim.o.cmdheight = 0
 vim.o.laststatus = 3
